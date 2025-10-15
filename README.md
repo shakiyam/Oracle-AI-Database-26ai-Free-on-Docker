@@ -1,7 +1,7 @@
-Oracle-Database-23ai-Free-on-Docker
-===================================
+Oracle-AI-Database-26ai-Free-on-Docker
+======================================
 
-A set of scripts for using Oracle Database 23ai Free docker image in [Oracle Container Registry](https://container-registry.oracle.com/ords/f?p=113:1).
+A set of scripts for using Oracle AI Database 26ai Free Container Image in [Oracle Container Registry](https://container-registry.oracle.com/ords/ocr/ba/database/free).
 
 Configuration
 -------------
@@ -9,7 +9,7 @@ Configuration
 Copy the file `dotenv.sample` to a file named `.env` and modify the contents as needed.
 
 ```shell
-ORACLE_CONTAINER_NAME=oracle_database_23ai_free
+ORACLE_CONTAINER_NAME=oracle_ai_database_26ai_free
 ORACLE_LISTENER_PORT=1521
 ORACLE_PWD=oracle
 ```
@@ -17,49 +17,61 @@ ORACLE_PWD=oracle
 Examples of Use
 ---------------
 
-### [run.sh](run.sh) ###
+### [run.sh](run.sh)
 
 Create a new container and start an Oracle Database server instance.
 
 ```console
 $ ./run.sh
 Starting an Oracle Database Server Instance.
-Trying to pull container-registry.oracle.com/database/free:23.4.0.0...
+Trying to pull container-registry.oracle.com/database/free:23.26.0.0...
 Getting image source signatures
-Copying blob 6d6e36f7c9fb done
-Copying blob 716b489ad5ad done
-Copying blob 21def9023b6f done
-Copying blob 5e7b2cfeb7fa done
-Copying blob b4a24759beff done
-Copying blob 78bba54e9814 done
-Copying blob c23fd8c6cbee done
-Copying blob 79dea26b3a5a done
-Copying blob 5dfbcf799df3 done
-Copying blob 154719a62576 done
-Copying config 7510f8869b done
+Copying blob 80e077127e4d done   |
+Copying blob 1f1cf24bbf7e done   |
+Copying blob 4acf832d90b3 done   |
+Copying blob b9396890732e done   |
+Copying blob 0ff37fff6869 done   |
+Copying blob 5a07736fdde8 done   |
+Copying blob cd7b8ba429c8 done   |
+Copying blob 1b6fc027e13a done   |
+Copying blob 6dd3b1e173c3 done   |
+Copying blob fdabdccae093 done   |
+Copying blob 3eca54462a88 done   |
+Copying blob f88fb65e9580 done   |
+Copying blob 274ee7eae0eb done   |
+Copying blob e512329394fd done   |
+Copying blob 1e28433bae34 done   |
+Copying blob c1ddce606179 done   |
+Copying blob ae4df28d16d5 done   |
+Copying blob 61481f80e884 done   |
+Copying blob b8b4e463ec9c done   |
+Copying blob 9d5777971f73 done   |
+Copying blob 3fe4d7e78842 done   |
+Copying blob 878564f7347e done   |
+Copying config 4cb8a09d3b done   |
 Writing manifest to image destination
-f8dfe48aa572224c865faa07808461e3fdbb1a308e56ef2985f69eca3b4fddc9
-Waiting for oracle_database_23ai to get healthy ........................................................... done
+7e9ec7681fafc8a5762dbafa58ce819cc65cf40e7b629778b8bb471efb22c6c9
+Waiting for oracle_ai_database_26ai to get healthy ........................................................... done
 $
 ```
 
-### [install-sample.sh](install-sample.sh) ###
+### [install-sample.sh](install-sample.sh)
 
 Installs sample schemas.
 
 ```console
-./install-sample.sh
+$ ./install-sample.sh
 
 
-SQLcl: Release 24.1 Production on Wed May 08 01:11:16 2024
+SQLcl: Release 25.3 Production on Wed Oct 15 05:58:24 2025
 
-Copyright (c) 1982, 2024, Oracle.  All rights reserved.
+Copyright (c) 1982, 2025, Oracle.  All rights reserved.
 
-Last Successful login time: Wed May 08 2024 01:11:17 +00:00
+Last Successful login time: Wed Oct 15 2025 05:58:25 +00:00
 
 Connected to:
-Oracle Database 23ai Free Release 23.0.0.0.0 - Develop, Learn, and Run for Free
-Version 23.4.0.24.05
+Oracle AI Database 26ai Free Release 23.26.0.0.0 - Develop, Learn, and Run for Free
+Version 23.26.0.0.0
 
 
 Thank you for installing the Oracle Human Resources Sample Schema.
@@ -71,53 +83,50 @@ Enter a password for the user HR:
 ...
 ...
 ...
-Installationverification
-___________________________
+Installation verification
+_________________________
 Verification:
 
-Table                            provided    actual
-_____________________________ ___________ _________
-channels                                5         5
-costs                               82112     82112
-countries                              35        35
-customers                           55500     55500
-products                               72        72
-promotions                            503       503
-sales                              918843    918843
-times                                1826      1826
-supplementary_demographics           4500      4500
+Table                      provided actual
+__________________________ ________ ______
+channels                          5      5
+costs                         82112  82112
+countries                        35     35
+customers                     55500  55500
+products                         72     72
+promotions                      503    503
+sales                        918843 918843
+times                          1826   1826
+supplementary_demographics     4500   4500
 
-Thankyou!
-___________________________________________________________
+Thank you!
+________________________________________________________
 The installation of the sample schema is now finished.
 Please check the installation verification output above.
-
 You will now be disconnected from the database.
-
 Thank you for using Oracle Database!
-
-Disconnected from Oracle Database 23ai Free Release 23.0.0.0.0 - Develop, Learn, and Run for Free
-Version 23.4.0.24.05
+Disconnected from Oracle AI Database 26ai Free Release 23.26.0.0.0 - Develop, Learn, and Run for Free
+Version 23.26.0.0.0
 $
 ```
 
-### [sqlplus.sh](sqlplus.sh) ###
+### [sqlplus.sh](sqlplus.sh)
 
 Connect to CDB root with SQL*Plus and confirm the connection.
 
 ```console
 $ ./sqlplus.sh system/oracle
 
-SQL*Plus: Release 23.0.0.0.0 - Production on Wed May 8 01:15:42 2024
-Version 23.4.0.24.05
+SQL*Plus: Release 23.26.0.0.0 - Production on Wed Oct 15 06:01:29 2025
+Version 23.26.0.0.0
 
-Copyright (c) 1982, 2024, Oracle.  All rights reserved.
+Copyright (c) 1982, 2025, Oracle.  All rights reserved.
 
-Last Successful login time: Wed May 08 2024 01:11:45 +00:00
+Last Successful login time: Wed Oct 15 2025 05:58:46 +00:00
 
 Connected to:
-Oracle Database 23ai Free Release 23.0.0.0.0 - Develop, Learn, and Run for Free
-Version 23.4.0.24.05
+Oracle AI Database 26ai Free Release 23.26.0.0.0 - Develop, Learn, and Run for Free
+Version 23.26.0.0.0
 
 SQL> show con_name
 
@@ -125,8 +134,8 @@ CON_NAME
 ------------------------------
 CDB$ROOT
 SQL> exit
-Disconnected from Oracle Database 23ai Free Release 23.0.0.0.0 - Develop, Learn, and Run for Free
-Version 23.4.0.24.05
+Disconnected from Oracle AI Database 26ai Free Release 23.26.0.0.0 - Develop, Learn, and Run for Free
+Version 23.26.0.0.0
 $
 ```
 
@@ -135,16 +144,16 @@ Connect to PDB with SQL*Plus and confirm the connection. If you have sample sche
 ```console
 $ ./sqlplus.sh system/oracle@FREEPDB1
 
-SQL*Plus: Release 23.0.0.0.0 - Production on Wed May 8 01:16:43 2024
-Version 23.4.0.24.05
+SQL*Plus: Release 23.26.0.0.0 - Production on Wed Oct 15 06:02:20 2025
+Version 23.26.0.0.0
 
-Copyright (c) 1982, 2024, Oracle.  All rights reserved.
+Copyright (c) 1982, 2025, Oracle.  All rights reserved.
 
-Last Successful login time: Wed May 08 2024 01:15:42 +00:00
+Last Successful login time: Wed Oct 15 2025 06:01:29 +00:00
 
 Connected to:
-Oracle Database 23ai Free Release 23.0.0.0.0 - Develop, Learn, and Run for Free
-Version 23.4.0.24.05
+Oracle AI Database 26ai Free Release 23.26.0.0.0 - Develop, Learn, and Run for Free
+Version 23.26.0.0.0
 
 SQL> SHOW CON_NAME
 
@@ -179,12 +188,12 @@ SQL> SELECT 2*3;
          6
 
 SQL> exit
-Disconnected from Oracle Database 23ai Free Release 23.0.0.0.0 - Develop, Learn, and Run for Free
-Version 23.4.0.24.05
+Disconnected from Oracle AI Database 26ai Free Release 23.26.0.0.0 - Develop, Learn, and Run for Free
+Version 23.26.0.0.0
 $
 ```
 
-### [sql.sh](sql.sh) ###
+### [sql.sh](sql.sh)
 
 Connect to PDB with SQLcl and browse to the sample table.
 
@@ -192,13 +201,13 @@ Connect to PDB with SQLcl and browse to the sample table.
 $ ./sql.sh hr/oracle@FREEPDB1
 
 
-SQLcl: Release 24.1 Production on Fri May 10 00:55:34 2024
+SQLcl: Release 25.3 Production on Wed Oct 15 06:03:33 2025
 
-Copyright (c) 1982, 2024, Oracle.  All rights reserved.
+Copyright (c) 1982, 2025, Oracle.  All rights reserved.
 
 Connected to:
-Oracle Database 23ai Free Release 23.0.0.0.0 - Develop, Learn, and Run for Free
-Version 23.4.0.24.05
+Oracle AI Database 26ai Free Release 23.26.0.0.0 - Develop, Learn, and Run for Free
+Version 23.26.0.0.0
 
 SQL> set sqlformat csv
 SQL> SELECT * FROM hr.employees WHERE rownum <= 3;
@@ -208,12 +217,12 @@ SQL> SELECT * FROM hr.employees WHERE rownum <= 3;
 102,"Lex","Garcia","LGARCIA","1.515.555.0102",13-JAN-11,"AD_VP",17000,,100,90
 
 SQL> exit
-Disconnected from Oracle Database 23ai Free Release 23.0.0.0.0 - Develop, Learn, and Run for Free
-Version 23.4.0.24.05
+Disconnected from Oracle AI Database 26ai Free Release 23.26.0.0.0 - Develop, Learn, and Run for Free
+Version 23.26.0.0.0
 $
 ```
 
-### [logs.sh](logs.sh) ###
+### [logs.sh](logs.sh)
 
 Show the database alert log and others.
 
@@ -221,69 +230,57 @@ Show the database alert log and others.
 ./logs.sh
 Starting Oracle Net Listener.
 Oracle Net Listener started.
-Starting Oracle Database instance FREE.
-Oracle Database instance FREE started.
+Starting Oracle AI Database instance FREE.
+Oracle AI Database instance FREE started.
 
 The Oracle base remains unchanged with value /opt/oracle
 
-SQL*Plus: Release 23.0.0.0.0 - Production on Wed May 8 01:08:12 2024
-Version 23.4.0.24.05
+SQL*Plus: Release 23.26.0.0.0 - Production on Wed Oct 15 06:13:10 2025
+Version 23.26.0.0.0
 
-Copyright (c) 1982, 2024, Oracle.  All rights reserved.
+Copyright (c) 1982, 2025, Oracle.  All rights reserved.
 
 
 Connected to:
-Oracle Database 23ai Free Release 23.0.0.0.0 - Develop, Learn, and Run for Free
-Version 23.4.0.24.05
+Oracle AI Database 26ai Free Release 23.26.0.0.0 - Develop, Learn, and Run for Free
+Version 23.26.0.0.0
 
 SQL>
 User altered.
 ...
 ...
 ...
-FREEPDB1(3):Resize operation completed for file# 12, fname /opt/oracle/oradata/FREE/FREEPDB1/system01.dbf, old size 286720K, new size 296960K
-2024-05-08T01:12:19.725650+00:00
-FREEPDB1(3):TABLE SYS.WRI$_OPTSTAT_HISTHEAD_HISTORY: ADDED INTERVAL PARTITION SYS_P324 (45419) VALUES LESS THAN (TO_DATE(' 2024-05-09 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
-2024-05-08T01:13:16.189083+00:00
-FREEPDB1(3):TABLE SYS.WRP$_REPORTS: ADDED AUTOLIST FRAGMENT SYS_P344 (2) VALUES (( 2991363328, TO_DATE(' 2024-05-06 00:00:00', 'syyyy-mm-dd hh24:mi:ss', 'nls_calendar=gregorian') ))
-FREEPDB1(3):TABLE SYS.WRP$_REPORTS_DETAILS: ADDED AUTOLIST FRAGMENT SYS_P345 (2) VALUES (( 2991363328, TO_DATE(' 2024-05-06 00:00:00', 'syyyy-mm-dd hh24:mi:ss', 'nls_calendar=gregorian') ))
-FREEPDB1(3):TABLE SYS.WRP$_REPORTS_TIME_BANDS: ADDED AUTOLIST FRAGMENT SYS_P348 (2) VALUES (( 2991363328, TO_DATE(' 2024-05-06 00:00:00', 'syyyy-mm-dd hh24:mi:ss', 'nls_calendar=gregorian') ))
-2024-05-08T01:18:07.738866+00:00
-FREEPDB1(3):Resize operation completed for file# 13, fname /opt/oracle/oradata/FREE/FREEPDB1/sysaux01.dbf, old size 409600K, new size 419840K
-2024-05-08T01:18:07.749602+00:00
-Resize operation completed for file# 3, fname /opt/oracle/oradata/FREE/sysaux01.dbf, old size 624640K, new size 655360K
-FREEPDB1(3):Resize operation completed for file# 15, fname /opt/oracle/oradata/FREE/FREEPDB1/users01.dbf, old size 285440K, new size 295680K
 $
 ```
 
-### [start.sh](start.sh) ###
+### [start.sh](start.sh)
 
 Start container and Oracle Database server instance.
 
-```
+```console
 $ ./start.sh
-oracle_database_23ai
-Waiting for oracle_database_23ai to get healthy ........................................................... done
+oracle_ai_database_26ai
+Waiting for oracle_ai_database_26ai to get healthy ........................................................... done
 $
 ```
 
-### [stop.sh](stop.sh) ###
+### [stop.sh](stop.sh)
 
 Shutdown database and stop container.
 
-```
+```console
 ./stop.sh
-oracle_database_23ai
+oracle_ai_database_26ai
 $
 ```
 
-### [remove.sh](remove.sh) ###
+### [remove.sh](remove.sh)
 
 Remove container.
 
-```
+```console
 $ ./remove.sh
-oracle_database_23ai
+oracle_ai_database_26ai
 $
 ```
 

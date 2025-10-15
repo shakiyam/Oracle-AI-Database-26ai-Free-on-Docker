@@ -1,3 +1,3 @@
-ORACLE_CONTAINER_NAME=oracle_database_23ai
+ORACLE_CONTAINER_NAME=oracle_ai_database_26ai_free
 ORACLE_LISTENER_PORT=1521
 ORACLE_PWD=oracle

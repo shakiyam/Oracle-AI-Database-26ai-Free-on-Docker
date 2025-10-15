@@ -36,4 +36,4 @@ if [[ $health != "healthy" ]]; then
   exit 1
 fi
 
-$DOCKER container exec -it "$ORACLE_CONTAINER_NAME" /opt/oracle/product/23ai/dbhomeFree/sqlcl/bin/sql "$@"
+$DOCKER container exec -it "$ORACLE_CONTAINER_NAME" /opt/oracle/product/26ai/dbhomeFree/sqlcl/bin/sql "$@"
